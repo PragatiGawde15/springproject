@@ -9,15 +9,15 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	
 
+	<mvc:annotation-driven/>
 	<!--Scan @Repository, @Service, @Component and @Controller spring beans -->
 	<context:component-scan base-package="com.rays" />
-	
+
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/ctl/**" />
-			<mvc:exclude-mapping path="/Auth"/>
+			<mvc:exclude-mapping path="/Auth" />
 			<bean class="com.rays.ctl.FrontCtl"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>

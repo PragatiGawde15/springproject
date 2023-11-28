@@ -12,7 +12,7 @@
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
-	<sf:form action="/SpringMVC/User" method="post" modelAttribute="form">
+	<sf:form action="/SpringMVC/ctl/User" method="post" modelAttribute="form">
 
 		<table>
 

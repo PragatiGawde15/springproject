@@ -1,20 +1,36 @@
 package com.rays.form;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class UserForm {
 
 	protected long id = 0;
 
-	private String firstName = null;
+	
+	@NotNull(message="first name is required")
+	private String firstName;
 
-	private String lastName = null;
+	
+	@NotEmpty(message="last name is required")
+	@Pattern(regexp = "^[a-zA-Z0-9]{6,12}$",
+    message = "last name must be of 6 to 12 length with no special characters")
+	private String lastName;
 
-	private String login = null;
+	@NotEmpty(message="username is required")
+	@Email(message="Email should be valid")
+	private String login;
 
-	private String password = null;
+	@NotEmpty
+	private String password;
 
 	private String dob;
 
-	private String address = null;
+	@NotEmpty
+	private String address;
 
 	public long getId() {
 		return id;
