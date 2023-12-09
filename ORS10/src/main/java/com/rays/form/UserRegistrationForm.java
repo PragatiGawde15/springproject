@@ -8,7 +8,7 @@ import com.rays.common.BaseDTO;
 import com.rays.common.BaseForm;
 import com.rays.dto.UserDTO;
 
-public class UserForm extends BaseForm {
+public class UserRegistrationForm extends BaseForm {
 
 	@NotEmpty(message = "please enter first name")
 	private String firstName;
@@ -23,15 +23,6 @@ public class UserForm extends BaseForm {
 	private String password;
 
 	private Date dob;
-
-	private long imageId;
-
-	private long roleId;
-
-	private String roleName;
-
-	public UserForm() {
-	}
 
 	public String getFirstName() {
 		return firstName;
@@ -73,30 +64,6 @@ public class UserForm extends BaseForm {
 		this.dob = dob;
 	}
 
-	public long getImageId() {
-		return imageId;
-	}
-
-	public void setImageId(long imageId) {
-		this.imageId = imageId;
-	}
-
-	public long getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(long roleId) {
-		this.roleId = roleId;
-	}
-
-	public String getRoleName() {
-		return roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
-
 	@Override
 	public BaseDTO getDto() {
 		UserDTO dto = initDTO(new UserDTO());
@@ -105,8 +72,7 @@ public class UserForm extends BaseForm {
 		dto.setLoginId(loginId);
 		dto.setPassword(password);
 		dto.setDob(dob);
-		dto.setRoleId(roleId);
-		dto.setRoleName(roleName);
+		dto.setRoleId(2L);
 		return dto;
 	}
 
