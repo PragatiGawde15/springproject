@@ -11,9 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="Header.jsp"%>
 	<sf:form action="Auth" method="post" modelAttribute="form">
-
 		<%
 			String error = (String) request.getAttribute("error");
 				if (error != null) {
